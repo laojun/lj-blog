@@ -1,0 +1,59 @@
+site_name: 老张的学习笔记
+docs_dir: src
+site_description: 学习记录
+extra_css:
+  - styles/extra.css
+extra:
+  generator: false
+dev_addr: localhost:9001
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs # 顶部分类标签
+    - navigation.sections # 侧边栏将一级标题渲染为可折叠/展开的组
+    - navigation.top # 返回顶部按钮（可选）
+    - search.highlight # 搜索高亮
+    - content.code.copy # 代码块复制
+    # - toc.integrate # 可选：将右侧目录集成到左侧（如果不需要可忽略）
+    - navigation.expand
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换暗色模式
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换亮色模式
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences # 支持嵌套代码块
+  - pymdownx.inlinehilite # 内联代码高亮
+  - admonition # 提示框
+  - footnotes
+
+plugins:
+  - search
+
+# 定义导航栏
+nav:
+  - langchain:
+      - 核心组件:
+          - agent: langchain/agent/index.md
+          - model: langchain/model/index.md
+      #     - messages: langchain/messages/index.md
+      #     - tool: langchain/tool/index.md
+      #     - 短期记忆: langchain/short_term_memory/index.md
+      #     - 流式传输(stream): langchain/stream/index.md
+      #     - 结构化输出: langchain/structure_output/index.md
+      # - 中间件:
+      #     - overview: langchain/middleware/index.md
+      # - 前端:
+      #     - overview: langchain/frontend/index.md
+      # - 高级用法:
+      #     - overview: langchain/advance_usage/index.md
